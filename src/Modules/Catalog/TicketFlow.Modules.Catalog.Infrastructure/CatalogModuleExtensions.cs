@@ -18,6 +18,7 @@ public static class CatalogModuleExtensions
 
         services.AddScoped<IEventRepository, SqlServerEventRepository>();
         services.AddScoped<CreateEventUseCase>();
+        services.AddScoped<GetByIdUseCase>();
 
         return services;
     }

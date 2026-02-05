@@ -1,16 +1,19 @@
 using TicketFlow.Modules.Catalog.Infrastructure;
+using TicketFlow.Modules.Sales.Infrastructure;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers()
-    .AddApplicationPart(typeof(TicketFlow.Modules.Catalog.Presentation.Controllers.EventsController).Assembly);
+    .AddApplicationPart(typeof(TicketFlow.Modules.Catalog.Presentation.Controllers.EventsController).Assembly)
+    .AddApplicationPart(typeof(TicketFlow.Modules.Sales.Presentation.Controllers.OrdersController).Assembly);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCatalogModule(builder.Configuration);
+builder.Services.AddSalesModule(builder.Configuration);
 
 var app = builder.Build();
 

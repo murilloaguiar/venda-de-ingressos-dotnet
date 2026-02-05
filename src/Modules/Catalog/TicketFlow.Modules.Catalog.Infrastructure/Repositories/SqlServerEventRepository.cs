@@ -1,4 +1,5 @@
-﻿using TicketFlow.Modules.Catalog.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using TicketFlow.Modules.Catalog.Domain.Entities;
 using TicketFlow.Modules.Catalog.Domain.Repositories;
 using TicketFlow.Modules.Catalog.Infrastructure.Database;
 
@@ -16,5 +17,10 @@ public class SqlServerEventRepository : IEventRepository
     {
         await _context.Events.AddAsync(ticketEvent);
         await _context.SaveChangesAsync();
+    }
+
+    public async Task<Event?> GetByIdAsync(Guid id)
+    {
+        return await _context.Events.AsNoTracking().FirstOrDefaultAsync(ev => ev.Id == id);
     }
 }

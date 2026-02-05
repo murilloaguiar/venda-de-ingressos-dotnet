@@ -10,4 +10,11 @@ public class InMemoryEventRepository : IEventRepository
         _events.Add(ticketEvent);
         return Task.CompletedTask;
     }
+
+    public Task<Event?> GetByIdAsync(Guid id)
+    {
+        var ticketEvent = _events.Find(e => e.Id == id);
+
+        return Task.FromResult(ticketEvent);
+    }
 }

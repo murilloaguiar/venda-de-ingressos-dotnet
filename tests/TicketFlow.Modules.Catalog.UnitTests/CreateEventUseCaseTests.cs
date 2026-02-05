@@ -1,9 +1,4 @@
 ﻿using NSubstitute;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TicketFlow.Modules.Catalog.Application.UseCases.Events;
 using TicketFlow.Modules.Catalog.Domain.Entities;
 using TicketFlow.Modules.Catalog.Domain.Repositories;

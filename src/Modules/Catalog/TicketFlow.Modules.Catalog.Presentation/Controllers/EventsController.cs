@@ -1,17 +1,16 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TicketFlow.Modules.Catalog.Application.UseCases.Events;
 
 namespace TicketFlow.Modules.Catalog.Presentation.Controllers;
 
 [ApiController]
 [Route("api/events")]
-public class EventsController(CreateEventUseCase _createEventUseCase): ControllerBase
+public class EventsController(
+    CreateEventUseCase createEventUseCase,
+    GetByIdUseCase getByIdUseCase): ControllerBase
 {
+    private readonly CreateEventUseCase _createEventUseCase = createEventUseCase;
+    private readonly GetByIdUseCase _getByIdUseCase = getByIdUseCase;
 
     [HttpPost]
     public async Task<IActionResult> Create([FromBody] CreateEventRequest request)
@@ -25,5 +24,15 @@ public class EventsController(CreateEventUseCase _createEventUseCase): Controlle
         {
             return BadRequest(ex);
         }
+    }
+
+    [HttpGet("{id:guid}")]
+    public async Task<IActionResult> GetById(Guid id)
+    {
+        var ticketEvent = await _getByIdUseCase.ExecuteAsync(id);
+        if(ticketEvent is null)
+            return NotFound();
+
+        return Ok(ticketEvent);
     }
 }
