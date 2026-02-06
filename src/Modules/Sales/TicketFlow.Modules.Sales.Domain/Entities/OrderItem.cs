@@ -13,7 +13,7 @@ public class OrderItem : Entity
 
     public OrderItem(Guid eventId, int quantity, decimal unitPrice)
     {
-        if (quantity < 0)
+        if (quantity <= 0)
             throw new ArgumentException("Quantidade deve ser maior que zero.", nameof(quantity));
         
         Id = Guid.NewGuid();

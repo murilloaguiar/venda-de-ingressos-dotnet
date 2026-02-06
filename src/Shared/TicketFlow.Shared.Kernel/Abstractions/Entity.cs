@@ -1,7 +1,23 @@
-﻿namespace TicketFlow.Shared.Kernel.Abstractions;
+﻿using TicketFlow.Shared.Kernel.Events;
+
+namespace TicketFlow.Shared.Kernel.Abstractions;
 public abstract class Entity : IEquatable<Entity>
 {
     public Guid Id { get; protected set; }
+
+    private readonly List<IDomainEvent> _domainEvents = new();
+
+    public IReadOnlyCollection<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+
+    protected void AddDomainEvent(IDomainEvent domainEvent)
+    {
+        _domainEvents.Add(domainEvent);
+    }
+
+    public void ClearDomainEvents()
+    {
+        _domainEvents.Clear();
+    }
 
     protected Entity(Guid id)
     {

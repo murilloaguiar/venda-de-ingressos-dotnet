@@ -1,4 +1,5 @@
-﻿using TicketFlow.Shared.Kernel.Abstractions;
+﻿using TicketFlow.Modules.Sales.Domain.Events;
+using TicketFlow.Shared.Kernel.Abstractions;
 
 namespace TicketFlow.Modules.Sales.Domain.Entities;
 
@@ -22,6 +23,8 @@ public class Order : Entity, IAggregateRoot
         CustomerId = customerId;
         CreatedAt = DateTime.UtcNow;
         Status = OrderStatus.Pending;
+
+        AddDomainEvent(new OrderCreatedEvent(Id, CustomerId, DateTime.UtcNow));
     }
 
     public static Order Create(Guid customerId)

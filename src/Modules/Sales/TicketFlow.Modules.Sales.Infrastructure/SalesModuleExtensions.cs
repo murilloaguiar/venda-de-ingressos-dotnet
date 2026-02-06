@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TicketFlow.Modules.Sales.Application.Integrations;
 using TicketFlow.Modules.Sales.Application.UseCases.Orders;
 using TicketFlow.Modules.Sales.Domain.Repositories;
@@ -30,6 +25,12 @@ public static class SalesModuleExtensions
         services.AddScoped<IOrderRepository, SqlServerOrderRepository>();
         services.AddScoped<ICatalogGateway, ModuleCatalogGateway>();
         services.AddScoped<CheckoutUseCase>();
+
+        services.AddMediatR(config =>
+        { 
+            config.RegisterServicesFromAssembly(typeof(CheckoutUseCase).Assembly);
+        }
+        );
 
         return services;
     }

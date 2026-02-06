@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using TicketFlow.Modules.Sales.Domain.Entities;
+﻿using TicketFlow.Modules.Sales.Domain.Entities;
 using TicketFlow.Modules.Sales.Domain.Repositories;
 using TicketFlow.Modules.Sales.Infrastructure.Database;
 
