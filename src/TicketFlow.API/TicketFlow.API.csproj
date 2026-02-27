@@ -17,6 +17,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Modules\Catalog\TicketFlow.Modules.Catalog.Infrastructure\TicketFlow.Modules.Catalog.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules\Catalog\TicketFlow.Modules.Catalog.Presentation\TicketFlow.Modules.Catalog.Presentation.csproj" />
+    <ProjectReference Include="..\Modules\Notifications\TicketFlow.Modules.Notifications.Application\TicketFlow.Modules.Notifications.Application.csproj" />
+    <ProjectReference Include="..\Modules\Payments\TicketFlow.Modules.Payments.Application\TicketFlow.Modules.Payments.Application.csproj" />
     <ProjectReference Include="..\Modules\Sales\TicketFlow.Modules.Sales.Infrastructure\TicketFlow.Modules.Sales.Infrastructure.csproj" />
     <ProjectReference Include="..\Modules\Sales\TicketFlow.Modules.Sales.Presentation\TicketFlow.Modules.Sales.Presentation.csproj" />
   </ItemGroup>

@@ -39,6 +39,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Modules.Sales.Un
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Modules.Sales.Presentation", "src\Modules\Sales\TicketFlow.Modules.Sales.Presentation\TicketFlow.Modules.Sales.Presentation.csproj", "{12B1D4CC-7E58-4A02-A65A-2CF976BBBE7B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notifications", "Notifications", "{80B7AA84-D75B-4AFE-BC63-0FA825675224}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Modules.Notifications.Application", "src\Modules\Notifications\TicketFlow.Modules.Notifications.Application\TicketFlow.Modules.Notifications.Application.csproj", "{4EED9FBE-E7C9-415F-92BA-23B555BEF20A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Payments", "Payments", "{7186BACB-77DD-4895-8C61-6F98D75B2F11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketFlow.Modules.Payments.Application", "src\Modules\Payments\TicketFlow.Modules.Payments.Application\TicketFlow.Modules.Payments.Application.csproj", "{2E549357-404B-43E5-B5CD-555181280275}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -93,6 +101,14 @@ Global
 		{12B1D4CC-7E58-4A02-A65A-2CF976BBBE7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12B1D4CC-7E58-4A02-A65A-2CF976BBBE7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12B1D4CC-7E58-4A02-A65A-2CF976BBBE7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EED9FBE-E7C9-415F-92BA-23B555BEF20A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EED9FBE-E7C9-415F-92BA-23B555BEF20A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EED9FBE-E7C9-415F-92BA-23B555BEF20A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EED9FBE-E7C9-415F-92BA-23B555BEF20A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E549357-404B-43E5-B5CD-555181280275}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E549357-404B-43E5-B5CD-555181280275}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E549357-404B-43E5-B5CD-555181280275}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E549357-404B-43E5-B5CD-555181280275}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -114,6 +130,10 @@ Global
 		{1B5AC39D-A5C2-49F0-B424-BFA9F1D27F02} = {BEECAC7A-C0AE-461D-A126-56328EFC9396}
 		{2D7468D8-13FB-4C76-AC03-7458B59CED4B} = {B5E3DE8C-EAAB-49E4-813F-96A0AEFAE26B}
 		{12B1D4CC-7E58-4A02-A65A-2CF976BBBE7B} = {BEECAC7A-C0AE-461D-A126-56328EFC9396}
+		{80B7AA84-D75B-4AFE-BC63-0FA825675224} = {CB835981-572A-4DBF-BC2D-0EDA2B139029}
+		{4EED9FBE-E7C9-415F-92BA-23B555BEF20A} = {80B7AA84-D75B-4AFE-BC63-0FA825675224}
+		{7186BACB-77DD-4895-8C61-6F98D75B2F11} = {CB835981-572A-4DBF-BC2D-0EDA2B139029}
+		{2E549357-404B-43E5-B5CD-555181280275} = {7186BACB-77DD-4895-8C61-6F98D75B2F11}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F96C13FB-85EC-4130-B62E-7AA55CE2BB92}
