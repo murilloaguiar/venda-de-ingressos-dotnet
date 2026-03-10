@@ -22,7 +22,11 @@ Configure a string de conexão com o banco de dados no arquivo appsettings.json
 Certifique-se de ter o RabbitMQ e SQLServer instalado e rodando.
 
 ```bash
-dotnet ef database update
+# 1. Cria as tabelas do Catálogo
+dotnet ef database update --context CatalogDbContext --project src/Modules/Catalog/TicketFlow.Modules.Catalog.Infrastructure --startup-project src/TicketFlow.API
+
+# 2. Cria as tabelas de Vendas
+dotnet ef database update --context SalesDbContext --project src/Modules/Sales/TicketFlow.Modules.Sales.Infrastructure --startup-project src/TicketFlow.API
 ```
 
 ```bash

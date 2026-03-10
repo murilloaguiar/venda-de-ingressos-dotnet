@@ -1,6 +1,6 @@
 ﻿namespace TicketFlow.Shared.Kernel.Integrations;
 
-public class IPaymentApprovedIntegrationEvent
+public interface IPaymentApprovedIntegrationEvent
 {
     Guid OrderId { get; }
     Guid PaymentId { get; }

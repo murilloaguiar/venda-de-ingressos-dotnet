@@ -40,4 +40,14 @@ public class Order : Entity, IAggregateRoot
         var item = new OrderItem(eventId, quantity, unitPrice);
         _items.Add(item);
     }
+
+    public void MarkAsPaid()
+    {
+        if(Status != OrderStatus.Pending)
+        {
+            throw new InvalidOperationException("Apenas pedidos pendentes podem ser marcados como pagos.");
+        }
+
+        Status = OrderStatus.Paid;
+    }
 }

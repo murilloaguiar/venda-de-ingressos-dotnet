@@ -3,6 +3,7 @@ using TicketFlow.Modules.Sales.Infrastructure;
 using MassTransit;
 using TicketFlow.Modules.Notifications.Application.Consumers;
 using TicketFlow.Modules.Payments.Application.Consumers;
+using TicketFlow.Modules.Sales.Application.Consumers;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -15,10 +16,11 @@ builder.Services.AddMassTransit(x =>
 {
     x.AddConsumer<OrderCreatedEventConsumer>();
     x.AddConsumer<ProcessPaymentOnOrderCreatedConsumer>();
+    x.AddConsumer<PaymentApprovedEventConsumer>();
 
     x.UsingRabbitMq((context, cfg) =>
     {
-        cfg.Host("172.31.11.11", "/", h =>
+        cfg.Host("localhost", "/", h =>
         {
             h.Username("guest");
             h.Password("guest");
